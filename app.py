@@ -3,6 +3,22 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+st.subheader("⚡ Electricity Consumption (kWh)")
+fig1 = px.line(df, x='timestamp', y='electricity_kwh', title='Electricity Over Time', color_discrete_sequence=['#636EFA'])  # 蓝
+st.plotly_chart(fig1, use_container_width=True)
+
+st.subheader("💧 Water Usage (tons)")
+fig2 = px.line(df, x='timestamp', y='water_tons', title='Water Usage Over Time', color_discrete_sequence=['#00CC96'])  # 绿
+st.plotly_chart(fig2, use_container_width=True)
+
+st.subheader("🔥 Gas Consumption (m³)")
+fig3 = px.line(df, x='timestamp', y='gas_m3', title='Gas Consumption Over Time', color_discrete_sequence=['#EF553B'])  # 红
+st.plotly_chart(fig3, use_container_width=True)
+
+st.subheader("🌀 CO₂ Emissions (tons)")
+fig4 = px.line(df, x='timestamp', y='co2_tons', title='CO₂ Emissions Over Time', color_discrete_sequence=['#AB63FA'])  # 紫
+st.plotly_chart(fig4, use_container_width=True)
+
 st.set_page_config(page_title="Triphorium Energy Dashboard", layout="wide")
 
 st.title("🏢 Triphorium Energy Dashboard")

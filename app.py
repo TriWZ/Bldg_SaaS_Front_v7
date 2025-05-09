@@ -31,22 +31,22 @@ if uploaded_file:
 
     with col1:
         st.subheader("⚡ Electricity Consumption (kWh)")
-        fig1 = px.line(df, x="timestamp", y="electricity_kwh", title="Electricity Over Time")
+        fig1 = px.line(df, x='timestamp', y='electricity_kwh', title='Electricity Over Time', color_discrete_sequence=['#636EFA'])  # 蓝
         st.plotly_chart(fig1, use_container_width=True)
 
     with col2:
         st.subheader("💧 Water Usage (tons)")
-        fig2 = px.line(df, x="timestamp", y="water_tons", title="Water Usage Over Time")
+        fig2 = px.line(df, x='timestamp', y='water_tons', title='Water Usage Over Time', color_discrete_sequence=['#00CC96'])  # 绿
         st.plotly_chart(fig2, use_container_width=True)
 
     with col3:
         st.subheader("🔥 Gas Consumption (m³)")
-        fig3 = px.line(df, x="timestamp", y="gas_m3", title="Gas Consumption Over Time")
+        fig3 = px.line(df, x='timestamp', y='gas_m3', title='Gas Consumption Over Time', color_discrete_sequence=['#EF553B'])  # 红
         st.plotly_chart(fig3, use_container_width=True)
 
     with col4:
-        st.subheader("🌫️ CO₂ Emissions (tons)")
-        fig4 = px.line(df, x="timestamp", y="co2_tons", title="CO2 Emissions Over Time")
+        st.subheader("🌀 CO₂ Emissions (tons)")
+        fig4 = px.line(df, x='timestamp', y='co2_tons', title='CO₂ Emissions Over Time', color_discrete_sequence=['#AB63FA'])  # 紫
         st.plotly_chart(fig4, use_container_width=True)
 
     # ========== 评级 & 建议逻辑 ==========
